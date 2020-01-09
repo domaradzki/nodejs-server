@@ -2,23 +2,23 @@ const path = require("path");
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const expressHlbs = require("express-handlebars");
+// const expressHlbs = require("express-handlebars");
 
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 const app = express();
 
-app.engine(
-  "hbs",
-  expressHlbs({
-    extname: "hbs",
-    defaultLayout: "main",
-    layoutsDir: "views/layouts/"
-  })
-);
+// app.engine(
+//   "hbs",
+//   expressHlbs({
+//     extname: "hbs",
+//     defaultLayout: "main",
+//     layoutsDir: "views/layouts/"
+//   })
+// );
 
-app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", "views"); //not nessesary as the defaulti is views
 
 app.use(bodyParser.urlencoded({ extended: true }));
